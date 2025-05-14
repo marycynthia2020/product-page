@@ -8,7 +8,7 @@ import { cartProvider } from "../context/CartContext";
 
 const CartButton = () => {
   const [count, setCount] = useState(0);
-  const { cartItems, setCartItems, isCartOpen, setIsCartOpen } =
+  const { cartItems, setCartItems, isCartOpen, setIsCartOpen} =
     useContext(cartProvider);
 
   const handleCartItems = () => {

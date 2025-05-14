@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { collection } from './products'
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { IoClose } from "react-icons/io5";
+import { cartProvider } from '../context/CartContext';
 
-const Lightbox = ({setLightbox}) => {
+const Lightbox = () => {
     const [src, setSrc] = useState("/image-product-1.jpg")
+    const {setLightbox} = useContext(cartProvider)
 
     const handleImageDisplay = (id) => {
         collection.products.map(productImage => {
@@ -38,7 +40,7 @@ const Lightbox = ({setLightbox}) => {
         
 
   return (
-    <div className='hidden lg:block w-2/5 transform absolute top-[50%] left-[47%] z-10 opacity-100 cursor-pointer '>
+    <div className='hidden lg:block w-2/5 transform absolute top-[50%] left-[47%] z-10 opacity-100 cursor-pointer'>
         <div className='max-w-[100%] mb-4 relative'>
             <img src={src} alt="" className='w-full md:rounded-md'/>
            <div className='bg-white p-3 rounded-full w-fit absolute -left-5 top-[40%]  ' onClick = {handlePreviousDisplay}> <GrFormPrevious className='text-3xl font-bold text-black hover:text-[#FF7D1A]' /></div>
@@ -49,7 +51,7 @@ const Lightbox = ({setLightbox}) => {
               <div className='  w-full '> <img key={product.id} src={product.thumbnail} alt={product.name} className=' w-full  rounded-md hover:opacity-50 hover:border-2 hover:border-[#FF7D1A]' onClick={() => handleImageDisplay(product.id)}/></div>
             ))}
         </div>
-        <IoClose  className='hover:text-[#FF7D1A]  text-3xl absolute -top-12 right-0' onClick={handleCloseLightbox}/>
+        <IoClose  className='hover:text-[#FF7D1A] text-white  text-3xl absolute -top-12 right-0' onClick={handleCloseLightbox}/>
     </div>
   )
 }

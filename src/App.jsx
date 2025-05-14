@@ -13,11 +13,14 @@ import { cartProvider } from "./context/CartContext";
 function App() {
   const [isMobile, setIsMobile] = useState(false)
   const {isCartOpen} = useContext(cartProvider)
+  const{lightbox} = useContext(cartProvider)
 
+lightbox? document.body.classList.add("lightbox"): document.body.classList.remove('lightbox')
 
 
   return (
     <div className="relative max-w-[1440px] mx-auto h-screen lg:px-20 ">
+      {lightbox && <div className="lightbox-container"></div>}
     {isMobile && <MobileMenu setIsMobile={setIsMobile} />}
       <Navbar setIsMobile={setIsMobile}/>
       {isCartOpen && <Cart />}

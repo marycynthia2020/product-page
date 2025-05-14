@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Image from '../components/Image'
 import ProductDescription from '../components/ProductDescription'
 import Lightbox from '../components/Lightbox'
-import Cart from '../components/Cart'
+import { cartProvider } from '../context/CartContext'
 
 const Collections = () => {
-  const [lightbox, setLightbox] = useState(false)
+  const {lightbox, setLightbox} = useContext(cartProvider)
   const handleLightbox = ()=> setLightbox(true)
 
   return (
-    <div className=' w-full lg:w-[80vw] 2xl:w-[60vw] max-w-[1440px] mx-auto '>
+    <div className='w-full lg:w-[85vw] lg:px-20 2xl:w-[70vw] max-w-[1440px] mx-auto '>
        <div className=' 
         flex flex-col lg:flex-row lg:items-center gap-16 lg:justify-between'>
             <Image handleLightbox={handleLightbox}/>
             <ProductDescription />
        </div>
-       {lightbox && <Lightbox setLightbox={setLightbox} />}
+       {lightbox && <Lightbox />}
          
     </div>
   )
