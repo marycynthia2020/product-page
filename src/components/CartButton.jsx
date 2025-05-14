@@ -8,25 +8,29 @@ import { cartProvider } from "../context/CartContext";
 
 const CartButton = () => {
   const [count, setCount] = useState(0);
-  const {cartItems, setCartItems, isCartOpen, setIsCartOpen} = useContext(cartProvider)
+  const { cartItems, setCartItems, isCartOpen, setIsCartOpen } =
+    useContext(cartProvider);
 
-  const handleCartItems = (event) => {
-    event.stopPropagation()
-    const total = collection.price * count
-    let cartItem = { ...collection, quantity: count, total: total};
-    setCartItems(prev => {
-      const foundItem = prev.find(item => item.id === cartItem.id);
+  const handleCartItems = () => {
+    if (count > 0) {
+      const total = collection.price * count;
+      let cartItem = { ...collection, quantity: count, total: total };
+      setCartItems(prev => {
+        const foundItem = prev.find(item => item.id === cartItem.id);
 
-      if (foundItem) {
-        return prev.map(item =>
-          item.id === foundItem.id ? { ...item, quantity: count, total: total } : item
-        );
+        if (foundItem) {
+          return prev.map(item =>
+            item.id === foundItem.id
+              ? { ...item, quantity: count, total: total }
+              : item
+          );
+        }
+        return [...prev, cartItem];
+      });
+      if (!isCartOpen) {
+        setIsCartOpen(true);
       }
-      return [...prev, cartItem];
-    });
-      if(!isCartOpen){
-        setIsCartOpen(true)
-      }
+    }
   };
 
   const increaseCount = () => setCount(prev => prev + 1);
@@ -36,7 +40,6 @@ const CartButton = () => {
       return;
     }
   };
-  console.log(cartItems)
 
   return (
     <div className="flex flex-col lg:flex-row items-center gap-4">
