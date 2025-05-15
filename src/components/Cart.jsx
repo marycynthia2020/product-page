@@ -11,7 +11,7 @@ const Cart = () => {
   }
 
   return (
-    <div className='mobile-cart md:top-[20%] lg:w-[385px] lg:top-[9%] lg:left-[60%]  bg-white shadow-2xl rounded-md lg:mr-left-20 text-[#666D73]'>
+    <div className='mobile-cart md:top-[20%] lg:w-[385px] lg:top-[11%] lg:left-[60%]  bg-white shadow-2xl rounded-md lg:mr-left-20 text-[#666D73]'>
        <div className='font-semibold p-4 sm:p-6 text-lg text-black'> <h3 >Cart</h3></div>
         <hr></hr>
        {cartItems.length >0? cartItems.map(item => (

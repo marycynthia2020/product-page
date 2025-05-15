@@ -12,11 +12,12 @@ import { cartProvider } from "./context/CartContext";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
-  const { isCartOpen, lightbox } = useContext(cartProvider);
+  const { isCartOpen, lightbox, setLightbox } = useContext(cartProvider);
+  const closeLightbox = ()=> setLightbox(false)
 
   return (
-    <div className="w-[100vw]  mx-auto h-screen border-2 border-red-400 lg:px-20">
-      {lightbox && <div className=" hidden lg:block lightbox-container"></div>}
+    <div className="w-[100vw]  mx-auto h-full border-2 border-red-400 lg:px-20">
+      {lightbox && <div className=" hidden lg:block lightbox-container" onClick={closeLightbox}></div>}
       {isMobile && <MobileMenu setIsMobile={setIsMobile} />}
       <Navbar setIsMobile={setIsMobile} />
       {isCartOpen && <Cart />}

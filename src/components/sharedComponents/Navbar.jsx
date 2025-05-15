@@ -27,7 +27,7 @@ const Navbar = ({ setIsMobile }) => {
   ]
 
   return (
-    <nav className="max-w-[1440px] lg:px-20 relative  lg:mb-16 py-8  md:border-b  cursor-pointer w-[90vw] lg:w-full mx-auto flex items-center justify-between text-[#666D73]">
+    <nav className="max-w-[1440px] lg:px-20 relative  lg:mb-16 py-4 2xl:py-8  md:border-b  cursor-pointer w-[90vw] lg:w-full mx-auto flex items-center justify-between text-[#666D73]">
       <div className="flex gap-4 md:gap-8 items-center">
         <IoMdMenu className="lg:hidden text-2xl" onClick={toggleMobileMenu} />
         <img src={logo} width={130} height={130} />
@@ -39,7 +39,7 @@ const Navbar = ({ setIsMobile }) => {
                 <span className="hover:text-black">{link.name}</span>
                 <span
                   className={
-                    isActive ? "absolute top-[260%]  h-1  inset-x-0 bg-orange-500" : "hidden h-1 w-full"
+                    isActive ? "absolute top-[230%] 2xl:top-[290%]  h-1  inset-x-0 bg-orange-500" : "hidden h-1 w-full"
                   }
                 />
               </>

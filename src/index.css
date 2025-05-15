@@ -7,7 +7,7 @@
 body {
   font-family: "Kumbh Sans", sans-serif;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -22,7 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 70vw;
+  width: 60vw;
   z-index: 10;
   color: black;
   padding: 20px;
@@ -45,12 +45,7 @@ body {
   left: 0;
   right: 0;
 }
-/* .lightbox{
-  background-color: #404044
-} */
-.border{
-  border-bottom: 1px solid  #404044;
-}
+
 .lightbox-container{
 background-color: black;
   /* height: 100%; */
