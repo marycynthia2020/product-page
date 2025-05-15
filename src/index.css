@@ -8,11 +8,11 @@ body {
   font-family: "Kumbh Sans", sans-serif;
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 .active {
-  color: orange;
-  /* border-bottom: 3px solid orange; */
+  border-bottom: 3px solid orange;
   
 }
 .mobileMenu {
@@ -45,9 +45,9 @@ body {
   left: 0;
   right: 0;
 }
-.lightbox{
+/* .lightbox{
   background-color: #404044
-}
+} */
 .border{
   border-bottom: 1px solid  #404044;
 }
@@ -56,5 +56,6 @@ background-color: black;
   height: 100%;
   position: absolute;
   width: 100%;
-  opacity: 0.02;
+  opacity: 0.75;
+  z-index: 900;
 }

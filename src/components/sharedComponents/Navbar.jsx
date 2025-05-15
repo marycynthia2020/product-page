@@ -5,12 +5,13 @@ import { NavLink } from "react-router-dom";
 import avatar from "/image-avatar.png"
 import logo from "/logo.svg"
 import { cartProvider } from "../../context/CartContext";
+import Cart from "../Cart";
 
 const Navbar = ({setIsMobile}) => {
     const toggleMobileMenu = ()=> setIsMobile(prev => !prev)
     const {setIsCartOpen} = useContext(cartProvider)
     const toggleShoppingCart = ()=> setIsCartOpen(prev => !prev)
-    const {cartItems} = useContext(cartProvider)
+    const {isCartOpen, cartItems} = useContext(cartProvider)
 
     let quantity = 0
 
@@ -19,7 +20,7 @@ const Navbar = ({setIsMobile}) => {
     })
 
   return (
-    <nav className="relative md:mb-16 py-8  md:border-b  cursor-pointer w-[90vw] lg:w-full mx-auto flex items-center justify-between text-[#666D73]">
+    <nav className="border border-red-600 max-w-[1440px] lg:px-20 relative  lg:mb-16 py-8  md:border-b  cursor-pointer w-[90vw] lg:w-full mx-auto flex items-center justify-between text-[#666D73]">
       <div className="flex gap-4 md:gap-8 items-center">
         <IoMdMenu className="lg:hidden text-2xl" onClick={toggleMobileMenu}/>
         <img src={logo} width={130} height={130}/>
@@ -43,6 +44,7 @@ const Navbar = ({setIsMobile}) => {
         <div className="h-8 w-8 rounded-full" ><img src={avatar} className="w-full h-full"  /></div>
           
       </div>
+        {isCartOpen && <Cart />}
     </nav>
   );
 z};

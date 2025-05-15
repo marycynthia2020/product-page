@@ -11,19 +11,20 @@ import Cart from "./components/Cart";
 import { cartProvider } from "./context/CartContext";
 
 function App() {
-  const [isMobile, setIsMobile] = useState(false)
-  const {isCartOpen} = useContext(cartProvider)
-  const{lightbox} = useContext(cartProvider)
+  const [isMobile, setIsMobile] = useState(false);
+  const { isCartOpen, lightbox } = useContext(cartProvider);
 
-lightbox? document.body.classList.add("lightbox"): document.body.classList.remove('lightbox')
-
+  lightbox
+    ? document.body.classList.add("lightbox")
+    : document.body.classList.remove("lightbox");
 
   return (
-    <div className="relative max-w-[1440px] mx-auto h-screen lg:px-20 ">
-      {lightbox && <div className="lightbox-container"></div>}
-    {isMobile && <MobileMenu setIsMobile={setIsMobile} />}
-      <Navbar setIsMobile={setIsMobile}/>
+    <div className="w-[100vw]  mx-auto h-screen border-2 border-red-400">
+      {lightbox && <div className=" hidden lg:block lightbox-container"></div>}
+      {isMobile && <MobileMenu setIsMobile={setIsMobile} />}
+      <Navbar setIsMobile={setIsMobile} />
       {isCartOpen && <Cart />}
+
       <Routes>
         <Route path="/" element={<Collections />} />
         <Route path="/men" element={<Men />} />
