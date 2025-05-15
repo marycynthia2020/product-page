@@ -41,7 +41,7 @@ const Image = ({handleLightbox}) => {
         </div>
         <div className='max-w-[100%] hidden lg:grid grid-cols-4 gap-4 rounded-md'>
             {collection.products.map(product => (
-              <div className='  w-full '> <img key={product.id} src={product.thumbnail} alt={product.name} className=' w-full  rounded-md hover:opacity-40 hover:border-2 hover:border-[#FF7D1A]' onClick={() => handleImageDisplay(product.id)}/></div>
+              <div className='  w-full '> <img key={product.id} src={product.thumbnail} alt={product.name} className={src===product.bigImage? 'opacity-50 cursor-pointer w-full  rounded-md border-2 border-[#FF7D1A]':' cursor-pointer w-full  rounded-md hover:opacity-40 hover:border-2 hover:border-[#FF7D1A]'} onClick={() => handleImageDisplay(product.id)}/></div>
             ))}
         </div>
     </div>

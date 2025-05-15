@@ -49,7 +49,7 @@ const Lightbox = () => {
         </div>
         <div className='max-w-[80%] hidden lg:grid grid-cols-4 gap-4 rounded-md mx-auto'>
             {collection.products.map(product => (
-              <div className='  w-full '> <img key={product.id} src={product.thumbnail} alt={product.name} className=' w-full  rounded-md hover:opacity-50 hover:border-2 hover:border-[#FF7D1A]' onClick={() => handleImageDisplay(product.id)}/></div>
+              <div className='  w-full '> <img key={product.id} src={product.thumbnail} alt={product.name} className={src===product.bigImage? 'opacity-50  w-full  rounded-md border-2 border-[#FF7D1A]':' w-full  rounded-md hover:opacity-50 hover:border-2 hover:border-[#FF7D1A]'  } onClick={() => handleImageDisplay(product.id)}/></div>
             ))}
         </div>
         <IoClose  className='hover:text-[#FF7D1A] text-white  text-3xl absolute -top-12 right-0' onClick={handleCloseLightbox}/>
