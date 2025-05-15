@@ -16,7 +16,7 @@ function App() {
   const closeLightbox = ()=> setLightbox(false)
 
   return (
-    <div className="w-[100vw]  mx-auto h-full border-2 border-red-400 lg:px-20">
+    <div className="w-[100vw]  mx-auto min-h-[100vh] border-2 border-red-400 lg:px-20">
       {lightbox && <div className=" hidden lg:block lightbox-container" onClick={closeLightbox}></div>}
       {isMobile && <MobileMenu setIsMobile={setIsMobile} />}
       <Navbar setIsMobile={setIsMobile} />
