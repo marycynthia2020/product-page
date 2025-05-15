@@ -14,17 +14,12 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
   const { isCartOpen, lightbox } = useContext(cartProvider);
 
-  lightbox
-    ? document.body.classList.add("lightbox")
-    : document.body.classList.remove("lightbox");
-
   return (
-    <div className="w-[100vw]  mx-auto h-screen border-2 border-red-400">
+    <div className="w-[100vw]  mx-auto h-screen border-2 border-red-400 lg:px-20">
       {lightbox && <div className=" hidden lg:block lightbox-container"></div>}
       {isMobile && <MobileMenu setIsMobile={setIsMobile} />}
       <Navbar setIsMobile={setIsMobile} />
       {isCartOpen && <Cart />}
-
       <Routes>
         <Route path="/" element={<Collections />} />
         <Route path="/men" element={<Men />} />

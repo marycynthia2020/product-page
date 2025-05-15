@@ -45,15 +45,15 @@ const CartButton = () => {
     <div className="flex flex-col lg:flex-row items-center gap-4">
       <div className=" w-full lg:w-[40%] flex items-center justify-between p-3 bg-[#F5F4FC] rounded-md">
         <button>
-          <img src={minus} alt="" onClick={decreaseCount} />
+          <img src={minus} alt="" onClick={decreaseCount} className="hover:opacity-50" />
         </button>
         <span>{count}</span>
         <button>
-          <img src={plus} alt="" onClick={increaseCount} />
+          <img src={plus} alt="" onClick={increaseCount} className="hover:opacity-50" />
         </button>
       </div>
       <button
-        className="font-medium justify-center flex gap-4 items-center p-4 w-full lg:w-[60%] bg-[#FF7D1A] rounded-xl "
+        className="font-medium justify-center flex gap-4 items-center p-4 w-full lg:w-[60%] bg-[#FF7D1A] rounded-xl hover:opacity-50"
         onClick={handleCartItems}
       >
         <AiOutlineShoppingCart /> Add to Cart

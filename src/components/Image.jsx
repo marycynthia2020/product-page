@@ -35,13 +35,13 @@ const Image = ({handleLightbox}) => {
   return (
     <div className='w-full xl:w-[40%] 2xl:w-[40%]'>
         <div className='max-w-[100%] mb-4 relative'>
-            <img src={src} alt="" className='w-full md:rounded-md' onClick={handleLightbox}/>
+            <img src={src} alt="" className='w-full md:rounded-md cursor-pointer hover:opacity-80' onClick={handleLightbox}/>
            <div className='bg-white p-3 rounded-full w-fit absolute left-3 top-[40%] lg:hidden ' onClick = {handlePreviousDisplay}> <GrFormPrevious className='text-2xl font-bold text-black' /></div>
           <div  className='bg-white p-3 rounded-full w-fit absolute right-3 top-[40%] lg:hidden' onClick={handleNextDisplay}><MdNavigateNext className='text-2xl font-bold text-black' /></div>
         </div>
         <div className='max-w-[100%] hidden lg:grid grid-cols-4 gap-4 rounded-md'>
             {collection.products.map(product => (
-              <div className='  w-full '> <img key={product.id} src={product.thumbnail} alt={product.name} className=' w-full  rounded-md hover:opacity-50 hover:border-2 hover:border-[#FF7D1A]' onClick={() => handleImageDisplay(product.id)}/></div>
+              <div className='  w-full '> <img key={product.id} src={product.thumbnail} alt={product.name} className=' w-full  rounded-md hover:opacity-40 hover:border-2 hover:border-[#FF7D1A]' onClick={() => handleImageDisplay(product.id)}/></div>
             ))}
         </div>
     </div>

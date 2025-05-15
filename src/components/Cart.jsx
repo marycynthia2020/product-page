@@ -11,11 +11,11 @@ const Cart = () => {
   }
 
   return (
-    <div className='mobile-cart md:top-[20%] lg:w-[385px] lg:top-[9%] lg:left-auto  bg-white shadow-2xl rounded-md lg:mr-left-20 text-[#666D73]'>
+    <div className='mobile-cart md:top-[20%] lg:w-[385px] lg:top-[9%] lg:left-[60%]  bg-white shadow-2xl rounded-md lg:mr-left-20 text-[#666D73]'>
        <div className='font-semibold p-4 sm:p-6 text-lg text-black'> <h3 >Cart</h3></div>
         <hr></hr>
        {cartItems.length >0? cartItems.map(item => (
-        <div className='p-4 sm:p-6 h-fit  min-h-[200px] '>
+        <div className='p-4 sm:p-6 h-fit  min-h-[200px] lg:min-h-[150px] '>
             <div className='flex items-center justify-between mb-6'>
           <div className='m-2'><img src={item.products[0].thumbnail} alt="shoe" width={80} height={80} className='rounded-md hover:opacity-50 hover:border-2 hover:border-[#FF7D1A]' /></div>
           <div className=' flex flex-col gap-1'>
@@ -25,7 +25,7 @@ const Cart = () => {
           <RiDeleteBin6Line onClick={()=> deleteCartItems(item.id)} className='cursor-pointer ml-auto' />
         </div>
         <button
-                className="font-medium justify-center flex gap-4 items-center p-4 w-full text-black bg-[#FF7D1A] rounded-xl "
+                className="font-medium justify-center flex gap-4 items-center p-4 w-full text-black bg-[#FF7D1A] rounded-xl hover:opacity-50 "
               >
                Checkout
               </button>
@@ -33,7 +33,7 @@ const Cart = () => {
         </div>
       
 
-       )):  <div className='p-6 h-fit  min-h-[200px]'><p  className=' m-auto text-center'>Your cart is empty</p></div>}
+       )):  <div className='p-6 h-fit  min-h-[200px] lg:min-h-[150px]'><p  className=' m-auto text-center'>Your cart is empty</p></div>}
 
     </div>
   )
