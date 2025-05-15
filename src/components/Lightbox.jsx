@@ -41,7 +41,7 @@ const Lightbox = () => {
 
   return (
     
-        <div className='hidden lg:block w-2/5 transform absolute top-[50%] left-[50%] z-[999] cursor-pointer'>
+        <div className='hidden lg:block w-2/5 transform absolute top-[42%] left-[50%] z-[999] cursor-pointer'>
         <div className='max-w-[100%] mb-4 relative'>
             <img src={src} alt="" className='w-full md:rounded-md'/>
            <div className='bg-white p-3 rounded-full w-fit absolute -left-5 top-[40%]  ' onClick = {handlePreviousDisplay}> <GrFormPrevious className='text-3xl font-bold text-black hover:text-[#FF7D1A]' /></div>
